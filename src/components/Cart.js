@@ -2,30 +2,47 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
 
+//Misc. imports
+import IoIosCartOutline from 'react-icons/lib/io/ios-cart-outline'
+import Card, { CardContent } from 'material-ui/Card';
+
+const cartStyle = {
+  justifyContent: 'center'
+}
+
 const Cart  = ({ products, total, onCheckoutClicked }) => {
   const hasProducts = products.length > 0
   const nodes = hasProducts ? (
+    // if cart is not empty
     products.map(product =>
       <Product
         title={product.title}
         price={product.price}
         quantity={product.quantity}
         key={product.id}
+        pic={product.pic}
       />
     )
   ) : (
-    <em>Please add some products to cart.</em>
+    <div><IoIosCartOutline /> Your cart is empty</div>
   )
 
   return (
     <div>
-      <h3>Your Cart</h3>
-      <div>{nodes}</div>
-      <p>Total: &#36;{total}</p>
-      <button onClick={onCheckoutClicked}
-        disabled={hasProducts ? '' : 'disabled'}>
-        Checkout
-      </button>
+      <Card>
+        <CardContent>
+          <h3>Your Cart</h3>
+          <hr />
+          <div >
+            <div style={cartStyle}>{nodes} <hr /> </div>
+            <div>Total: &#36;{total}</div>
+            <div><button onClick={onCheckoutClicked}
+              disabled={hasProducts ? '' : 'disabled'}>
+              Checkout
+            </button> </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   )
 }

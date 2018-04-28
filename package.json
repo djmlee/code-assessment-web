@@ -4,6 +4,8 @@
   "private": true,
   "devDependencies": {
     "enzyme": "^2.8.2",
+    "material-ui": "^1.0.0-beta.43",
+    "react-icons": "^2.2.7",
     "react-scripts": "^1.0.1",
     "react-test-renderer": "^15.6.1"
   },

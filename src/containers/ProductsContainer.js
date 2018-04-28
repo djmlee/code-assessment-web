@@ -9,7 +9,7 @@ import ProductsList from '../components/ProductsList'
 const ProductsContainer = ({ products, addToCart }) => (
   <ProductsList title="Products">
     {products.map(product =>
-      <ProductItem
+          <ProductItem
         key={product.id}
         product={product}
         onAddToCartClicked={() => addToCart(product.id)} />
@@ -22,7 +22,8 @@ ProductsContainer.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    inventory: PropTypes.number.isRequired
+    inventory: PropTypes.number.isRequired,
+    pic: PropTypes.string.isRequired
   })).isRequired,
   addToCart: PropTypes.func.isRequired
 }
