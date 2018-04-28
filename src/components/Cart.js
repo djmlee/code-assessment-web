@@ -7,7 +7,8 @@ import IoIosCartOutline from 'react-icons/lib/io/ios-cart-outline'
 import Card, { CardContent } from 'material-ui/Card';
 
 const cartStyle = {
-  justifyContent: 'center'
+  justifyContent: 'center',
+  margin: 'auto'
 }
 
 const Cart  = ({ products, total, onCheckoutClicked }) => {
@@ -28,7 +29,7 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
   )
 
   return (
-    <div>
+    <div style={cartStyle}>
       <Card>
         <CardContent>
           <h3>Your Cart</h3>

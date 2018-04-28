@@ -4,7 +4,9 @@ import Product from './Product'
 
 import Card, { CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
-
+/* For button passing
+  disabled={product.inventory > 0 ? '' : 'disabled'}
+*/
 const ProductItem = ({ product, onAddToCartClicked }) => (
   <div style={{ marginBottom: '1vw' }}>
     <Card>
@@ -18,7 +20,7 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
           />
           <Button
             onClick={onAddToCartClicked}
-            disabled={product.inventory > 0 ? '' : 'disabled'}>
+            >
             {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
           </Button>
       </CardContent>

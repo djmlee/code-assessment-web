@@ -5,6 +5,7 @@ import { checkout } from '../actions'
 import { getTotal, getCartProducts } from '../reducers'
 import {IoIosCartOutline, IoIosCart} from 'react-icons/lib/io/'
 import CartDialog from '../components/CartDialog'
+import InlineBlock from 'react-inline-block'
 
 const CartContainer = ({ products, total, checkout }) => {
   const hasProducts = products.length > 0
@@ -16,12 +17,16 @@ const CartContainer = ({ products, total, checkout }) => {
 
   return (
       <div>
-        <CartDialog
-          products={products}
-          total={total}
-          checkout={checkout}
-        />
-        {emptyCart}
+        {/* This is for aligning the Cart button + "Your cart is empty"*/}
+        <InlineBlock>
+          <CartDialog
+            products={products}
+            total={total}
+            checkout={checkout}
+          />
+        </InlineBlock>
+        <InlineBlock> {emptyCart} </InlineBlock>
+
       </div>
     )
 }
