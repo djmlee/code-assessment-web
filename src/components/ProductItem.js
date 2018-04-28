@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Product from './Product'
 
 import Card, { CardContent } from 'material-ui/Card';
+import Button from 'material-ui/Button';
 
 const ProductItem = ({ product, onAddToCartClicked }) => (
   <div style={{ marginBottom: '1vw' }}>
@@ -15,11 +16,11 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
           pic={product.pic}
           addCart={onAddToCartClicked}
           />
-          <button
+          <Button
             onClick={onAddToCartClicked}
             disabled={product.inventory > 0 ? '' : 'disabled'}>
             {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
-          </button>
+          </Button>
       </CardContent>
     </Card>
   </div>

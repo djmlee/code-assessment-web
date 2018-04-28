@@ -38,7 +38,7 @@ class CartDialog extends React.Component {
     return (
       <div>
         <Button onClick={this.handleClickOpen}>
-          <h2>{ cartIcon }</h2>
+          <h3>{ cartIcon }</h3>
         </Button>
         <Dialog
           fullScreen={fullScreen}
