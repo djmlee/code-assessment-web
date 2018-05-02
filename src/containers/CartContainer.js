@@ -6,6 +6,7 @@ import { getTotal, getCartProducts } from '../reducers'
 import {IoIosCartOutline, IoIosCart} from 'react-icons/lib/io/'
 import CartDialog from '../components/CartDialog'
 import InlineBlock from 'react-inline-block'
+//        <InlineBlock> {emptyCart} </InlineBlock>
 
 const CartContainer = ({ products, total, checkout }) => {
   const hasProducts = products.length > 0
@@ -25,7 +26,6 @@ const CartContainer = ({ products, total, checkout }) => {
             checkout={checkout}
           />
         </InlineBlock>
-        <InlineBlock> {emptyCart} </InlineBlock>
 
       </div>
     )

@@ -1,0 +1,14 @@
+.Button:hover {
+  background-color: 'ffffff'
+}
+
+/* productitem.js
+        <button
+        {...SecondaryButtonStyle.HoverButton}
+        onMouseEnter={() => setButtonHovered(true)}
+        onMouseLeave={() => setButtonHovered(false)}
+        className={buttonIsHovered ? 'hover' : null}
+        >
+        -
+      </button>
+*/

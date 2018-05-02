@@ -2,27 +2,34 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
 
-import Card, { CardContent } from 'material-ui/Card';
+import Card, { CardContent , CardMedia} from 'material-ui/Card';
 import Button from 'material-ui/Button';
-/* For button passing
-  disabled={product.inventory > 0 ? '' : 'disabled'}
+import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
+
+import PrimaryButton from './PrimaryButton';
+import { PrimaryButtonStyle, SecondaryButtonStyle } from '../styles/ReactStyles';
+/*
+        <PrimaryButton
+          inventory={product.inventory}
+          onAddToCartClicked={onAddToCartClicked}>
+        </PrimaryButton>
+        */
+/*
+  <Card style={{width:'100%',height:'100%'}}>
+  <CardContent>
+  </Card>
 */
+var buttonIsHovered = false;
+const setButtonHovered = ({ bool }) => ( buttonIsHovered = {bool} );
+
 const ProductItem = ({ product, onAddToCartClicked }) => (
-  <div style={{ marginBottom: '1vw' }}>
+  <div style={{ marginBottom: '2vw', borderRadius:'10px' }}>
     <Card>
       <CardContent>
         <Product
-          title={product.title}
-          price={product.price}
-          quantity={product.inventory}
-          pic={product.pic}
+          product={product}
           addCart={onAddToCartClicked}
-          />
-          <Button
-            onClick={onAddToCartClicked}
-            >
-            {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
-          </Button>
+        />
       </CardContent>
     </Card>
   </div>
